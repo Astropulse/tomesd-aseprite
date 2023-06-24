@@ -216,10 +216,10 @@ def apply_patch(
     is_diffusers = isinstance_str(model, "DiffusionPipeline") or isinstance_str(model, "ModelMixin")
 
     if not is_diffusers:
-        if not hasattr(model, "model") or not hasattr(model.model, "diffusion_model"):
+        if not hasattr(model, "unetConfigEncode") or not hasattr(model.model1, "diffusion_model"):
             # Provided model not supported
-            raise RuntimeError("Provided model was not a Stable Diffusion / Latent Diffusion model, as expected.")
-        diffusion_model = model.model.diffusion_model
+            raise RuntimeError(f"Has modelUNet {hasattr(model, 'unetConfigEncode')} | Has diffusion_model {hasattr(model.model1, 'diffusion_model')}")
+        diffusion_model = model.model1.diffusion_model
     else:
         # Supports "pipe.unet" and "unet"
         diffusion_model = model.unet if hasattr(model, "unet") else model
