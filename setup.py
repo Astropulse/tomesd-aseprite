@@ -2,10 +2,10 @@ from setuptools import find_packages, setup
 
 setup(
     name="tomesd",
-    version="0.1.3",
-    author="Daniel Bolya",
-    url="https://github.com/dbolya/tomesd",
-    description="Token Merging for Stable Diffusion",
+    version="0.1.4",
+    author="Daniel Bolya & Cody Claus",
+    url="https://github.com/Astropulse/tomesd-aseprite/",
+    description="Token Merging for Stable Diffusion, fixed for split model architecture",
     install_requires=["torch>=1.12.1"],
     packages=find_packages(exclude=("examples", "build")),
     license = 'MIT',
